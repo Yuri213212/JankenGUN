@@ -1,0 +1,5 @@
+const wchar_t ledPattern[3][8]={
+	L"■□\r\n□■",
+	L"□■\r\n■□",
+	L"□□\r\n□□",
+};

@@ -1,0 +1,1 @@
+i686-pc-mingw32-gcc -Wall -O3 -s -o image2ico.exe image2ico.c

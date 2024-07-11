@@ -1,0 +1,40 @@
+[command]
+P:ping
+W:write
+R:read
+U:upload
+D:download
+
+[response]
+O:ok
+E:error
+
+[timing]
+P123
+	O123
+WDAB
+	ODAB
+RXAB
+	ODAB
+ULABabcd....PPPP
+			OLAB
+DLAB
+	OLABabcd....PPPP
+
+?XXX(error)
+			EXXX
+
+[status]
+->init--P-->(O)ready
+
+ready--P/W/R-->(O)ready
+
+ready--U-->uploading
+uploading--data-->uploading
+uploading--xor-->(O)ready
+
+ready--D-->(O)downloading
+downloading---->(data)downloading
+downloading---->(xor)ready
+
+error--TLE-->(E)init

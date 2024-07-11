@@ -1,0 +1,14 @@
+GET /state
+	{"state":"start"}	game start
+	{"state":"end"}		game end
+	{"state":"wait"}	reserved for UI end, client should treat as end
+
+POST /hit			* The server developed by teammate requests "Content-Type: application/json" in header, not necessary for test server in tomcat.
+	{"result":"win"}	result win, 1 point
+	{"result":"victory"}	result win, 2 points
+	{"result":"draw"}	result draw	
+	{"result":"lose"}	result lose
+
+Do TCP communication with at least 100ms delay, to reduce CPU load for both server and client.
+
+link: https://gist.github.com/ufoo68/01320e1f20f6a83cfddfe080020605ac
